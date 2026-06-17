@@ -28,3 +28,6 @@ Thumbs.db
 
 # Scrape (source data)
 scrape/
+
+# Build artifacts & temp folders
+0/
