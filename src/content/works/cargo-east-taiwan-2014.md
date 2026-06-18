@@ -1,6 +1,6 @@
 ---
 title: "Self-Sustaining System of Absurdity"
-venue: "Cargo East – Subdued Existence, The National Taiwan Museum of Fine Arts"
+venue: "Cargo East, Subdued Existence, The National Taiwan Museum of Fine Arts"
 location: "Taichung, Taiwan"
 year: "2014"
 date: 2025-08-28

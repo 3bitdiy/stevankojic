@@ -1,6 +1,6 @@
 ---
 title: "Self-Sustaining System of Absurdity"
-venue: "MFRU | IFCA International Festival of Computer Arts, Vetrinjski dvor"
+venue: "MFRU, IFCA International Festival of Computer Arts, Vetrinjski dvor"
 location: "Maribor, Slovenia"
 year: "2022"
 date: 2025-12-11

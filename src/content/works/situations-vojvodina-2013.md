@@ -1,6 +1,6 @@
 ---
 title: "Self-Sustaining System of Absurdity"
-venue: "Situations – Installation Art in Vojvodina, Museum of Contemporary Art Vojvodina"
+venue: "Situations, Installation Art in Vojvodina, Museum of Contemporary Art Vojvodina"
 location: "Novi Sad, Serbia"
 year: "2013"
 date: 2025-08-14

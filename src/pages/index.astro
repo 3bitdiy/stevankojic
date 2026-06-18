@@ -29,7 +29,7 @@ const rendered = await Promise.all(
 			// Exhibition name on its own line, but only when it wasn't already
 			// used as the heading (i.e. for works with a distinct title).
 			const exhibition = distinct ? data.venue : '';
-			const placeYear = [data.location, data.year].filter(Boolean).join(' · ');
+			const placeYear = [data.location, data.year].filter(Boolean).join(', ');
 			return (
 			<article class="work">
 				<div class="text-limit work-text">

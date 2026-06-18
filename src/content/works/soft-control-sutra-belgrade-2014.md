@@ -1,6 +1,6 @@
 ---
 title: "Self-Sustaining System of Absurdity"
-venue: "Festival S.U.T.R.A. | TOMORROW | Soft Control, Youth Centre"
+venue: "Festival S.U.T.R.A., TOMORROW, Soft Control, Youth Centre"
 location: "Belgrade, Serbia"
 year: "2014"
 date: 2025-09-11

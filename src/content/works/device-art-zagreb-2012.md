@@ -1,6 +1,6 @@
 ---
 title: "Self-Sustaining System of Absurdity"
-venue: "Device Art — Kontejner, Student Centre"
+venue: "Device Art, Kontejner, Student Centre"
 location: "Zagreb, Croatia"
 year: "2012"
 date: 2025-07-24

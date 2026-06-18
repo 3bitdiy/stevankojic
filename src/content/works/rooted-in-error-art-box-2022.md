@@ -1,7 +1,7 @@
 ---
 title: "Rooted in Error"
 medium: "installation, infrared video, plants, LED grow lights, solenoids, sound, found materials"
-venue: "Farsickness / Homesickness / Homelessness — ART BOX, Creative District"
+venue: "Farsickness / Homesickness / Homelessness, ART BOX, Creative District"
 location: "Novi Sad, Serbia"
 year: "2022"
 date: 2025-12-25

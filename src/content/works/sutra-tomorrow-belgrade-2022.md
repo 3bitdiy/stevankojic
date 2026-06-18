@@ -1,6 +1,6 @@
 ---
 title: "Self-Sustaining System of Absurdity"
-venue: "Festival S.U.T.R.A. | TOMORROW, Museum of Science and Technology"
+venue: "Festival S.U.T.R.A., TOMORROW, Museum of Science and Technology"
 location: "Belgrade, Serbia"
 year: "2022"
 date: 2025-12-04

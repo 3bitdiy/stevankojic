@@ -1,6 +1,6 @@
 ---
 title: "The Garden of Intelligence"
-venue: "Festival S.U.T.R.A. | TOMORROW — In the Name of the Algorithm, Museum of Science and Technology"
+venue: "Festival S.U.T.R.A., TOMORROW, In the Name of the Algorithm, Museum of Science and Technology"
 location: "Belgrade, Serbia"
 year: "2019"
 date: 2025-10-23

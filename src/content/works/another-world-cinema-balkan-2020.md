@@ -1,6 +1,6 @@
 ---
 title: "Self-Sustaining System of Absurdity"
-venue: "Another World — Cinema Balkan, Saša Marčeta Foundation"
+venue: "Another World, Cinema Balkan, Saša Marčeta Foundation"
 location: "Belgrade, Serbia"
 year: "2020"
 date: 2025-11-20
