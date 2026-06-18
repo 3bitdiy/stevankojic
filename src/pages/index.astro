@@ -80,9 +80,9 @@ const images = data.images.slice(0, 20); // First 20 for index
 	<div class="header">
 		<div class="title">stevan kojić</div>
 		<div class="nav">
-			<a href="/">works</a>
-			<a href="/about">about</a>
-			<a href="/video">video</a>
+			<a href="./">works</a>
+			<a href="./about">about</a>
+			<a href="./video">video</a>
 		</div>
 	</div>
 
@@ -91,7 +91,7 @@ const images = data.images.slice(0, 20); // First 20 for index
 		<div class="gallery">
 			{images.map(img => (
 				<div class="gallery-item">
-					<img src={`/images/${img.file}`} alt="" loading="lazy">
+					<img src={`./images/${img.file}`} alt="" loading="lazy">
 					<div class="gallery-item-title">{img.file.replace(/\.\w+$/, '').substring(0, 40)}...</div>
 				</div>
 			))}
