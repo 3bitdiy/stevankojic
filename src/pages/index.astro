@@ -26,14 +26,16 @@ const rendered = await Promise.all(
 		{rendered.map(({ data, Content }) => {
 			const distinct = !isCycle(data.title);
 			const heading = distinct ? data.title : data.venue;
-			const subParts = distinct ? [data.venue, data.location] : [data.location];
-			const pre = subParts.filter(Boolean).join(', ');
-			const subline = [pre, data.year].filter(Boolean).join(' · ');
+			// Exhibition name on its own line, but only when it wasn't already
+			// used as the heading (i.e. for works with a distinct title).
+			const exhibition = distinct ? data.venue : '';
+			const placeYear = [data.location, data.year].filter(Boolean).join(' · ');
 			return (
 			<article class="work">
 				<div class="text-limit work-text">
 					{heading && <h1>{heading}</h1>}
-					{subline && <p class="venue">{subline}</p>}
+					{exhibition && <p class="venue">{exhibition}</p>}
+					{placeYear && <p class="venue place">{placeYear}</p>}
 					{data.medium && <p class="medium">{data.medium}</p>}
 					{data.link && <p class="link"><a href={linkHref(data.link)} target="_blank" rel="noopener">{data.link}</a></p>}
 					<div class="bodycopy"><Content /></div>
@@ -83,6 +85,9 @@ const rendered = await Promise.all(
 		font-size: 1.4rem;
 		color: rgba(38,38,38,0.8);
 		line-height: 1.4;
+	}
+	.venue.place {
+		color: rgba(38,38,38,0.6);
 	}
 	.medium {
 		font-size: 1.2rem;
