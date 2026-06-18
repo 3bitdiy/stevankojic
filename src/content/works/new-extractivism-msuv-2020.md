@@ -1,5 +1,5 @@
 ---
-title: "Self-Sustaining System of Absurdity – The New Extractivism"
+title: "The New Extractivism"
 medium: "with Vladan Joler"
 venue: "Museum of Contemporary Art Vojvodina"
 location: "Novi Sad, Serbia"

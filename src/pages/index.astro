@@ -6,6 +6,12 @@ const base = import.meta.env.BASE_URL;
 const img = (file) => base.replace(/\/$/, '') + '/images/' + file;
 const linkHref = (l) => (/^https?:\/\//.test(l) ? l : 'https://' + l);
 
+// The recurring cycle name is not a useful per-work heading — it repeats on
+// almost every work. So: heading = the work's own title if it has a distinct
+// one, otherwise the exhibition/venue. The cycle itself is explained in About.
+const CYCLE = 'self-sustaining system of absurdity';
+const isCycle = (t) => (t || '').trim().toLowerCase() === CYCLE;
+
 const works = (await getCollection('works'))
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
@@ -17,15 +23,19 @@ const rendered = await Promise.all(
 
 <Layout title="Stevan Kojić" active="works">
 	<div class="content">
-		{rendered.map(({ data, Content }) => (
+		{rendered.map(({ data, Content }) => {
+			const distinct = !isCycle(data.title);
+			const heading = distinct ? data.title : data.venue;
+			const subParts = distinct ? [data.venue, data.location] : [data.location];
+			const pre = subParts.filter(Boolean).join(', ');
+			const subline = [pre, data.year].filter(Boolean).join(' · ');
+			return (
 			<article class="work">
 				<div class="text-limit work-text">
-					<h1>{data.title}</h1>
-					<p class="meta small">
-						{data.medium && <span>{data.medium}<br /></span>}
-						{[data.venue, data.location].filter(Boolean).join(', ')}{data.year ? `, ${data.year}` : ''}
-						{data.link && <span><br /><a href={linkHref(data.link)} target="_blank" rel="noopener">{data.link}</a></span>}
-					</p>
+					{heading && <h1>{heading}</h1>}
+					{subline && <p class="venue">{subline}</p>}
+					{data.medium && <p class="medium">{data.medium}</p>}
+					{data.link && <p class="link"><a href={linkHref(data.link)} target="_blank" rel="noopener">{data.link}</a></p>}
 					<div class="bodycopy"><Content /></div>
 				</div>
 
@@ -48,7 +58,8 @@ const rendered = await Promise.all(
 					))}
 				</div>
 			</article>
-		))}
+			);
+		})}
 	</div>
 </Layout>
 
@@ -59,13 +70,32 @@ const rendered = await Promise.all(
 	.work-text {
 		margin-bottom: 2rem;
 	}
+	/* Heading: work's own title, or the venue for cycle works. Kept at 1.6rem
+	   (same as the site name) so it never dominates. */
 	.work-text h1 {
-		margin-bottom: 0.4rem;
+		font-size: 1.6rem;
+		font-weight: 400;
+		line-height: 1.3;
+		color: rgba(0,0,0,0.85);
+		margin-bottom: 0.3rem;
 	}
-	.meta {
-		color: rgba(38,38,38,0.85);
+	.venue {
+		font-size: 1.4rem;
+		color: rgba(38,38,38,0.8);
 		line-height: 1.4;
-		margin-bottom: 1.4em;
+	}
+	.medium {
+		font-size: 1.2rem;
+		color: rgba(38,38,38,0.6);
+		margin-top: 0.2rem;
+	}
+	.link {
+		font-size: 1.2rem;
+		margin-top: 0.2rem;
+	}
+	.link a { color: rgba(38,38,38,0.6); }
+	.work-text .bodycopy {
+		margin-top: 1.4em;
 	}
 	.work-text .bodycopy :global(p) {
 		margin-bottom: 1.4em;

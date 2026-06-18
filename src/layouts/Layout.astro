@@ -42,6 +42,16 @@ const href = (p) => base.replace(/\/$/, '') + p;
 		.site-menu a { display: block; }
 		.site-menu a.active { text-decoration: underline; }
 
+		/* ---- Masthead (artist name, top-left) ---- */
+		.masthead {
+			padding: 2rem 2rem 0;
+		}
+		.site-name {
+			font-size: 1.6rem;
+			color: #000;
+		}
+		.site-name:hover { text-decoration: none; }
+
 		/* ---- Content column ---- */
 		.content {
 			padding: 2rem;
@@ -70,10 +80,14 @@ const href = (p) => base.replace(/\/$/, '') + p;
 				text-align: left;
 			}
 			.site-menu a { display: inline; }
+			.site-menu { padding: 1rem 2rem 0; }
 		}
 	</style>
 </head>
 <body>
+	<header class="masthead">
+		<a href={href('/')} class="site-name">Stevan Kojić</a>
+	</header>
 	<nav class="site-menu">
 		<a href={href('/')} class={active === 'works' ? 'active' : ''}>works</a>
 		<a href={href('/about')} class={active === 'about' ? 'active' : ''}>about</a>
