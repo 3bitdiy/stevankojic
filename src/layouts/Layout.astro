@@ -1,0 +1,83 @@
+---
+const { title = 'Stevan Kojić', active = '' } = Astro.props;
+const base = import.meta.env.BASE_URL; // e.g. "/stevankojic/"
+const href = (p) => base.replace(/\/$/, '') + p;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{title}</title>
+	<style is:global>
+		html { font-size: 62.5%; -webkit-text-size-adjust: 100%; }
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			background-color: #fff;
+			color: #000;
+			font-size: 1.6rem;
+			font-weight: 400;
+			line-height: 1.4;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		a { color: inherit; text-decoration: none; }
+		a:hover { text-decoration: underline; }
+
+		/* ---- Site menu (fixed top-right, Cargo style) ---- */
+		.site-menu {
+			position: fixed;
+			top: 3rem;
+			right: 3rem;
+			z-index: 100;
+			font-size: 1.6rem;
+			line-height: 1.3;
+			text-align: right;
+			mix-blend-mode: difference;
+			color: #fff;
+		}
+		.site-menu a { display: block; }
+		.site-menu a.active { text-decoration: underline; }
+
+		/* ---- Content column ---- */
+		.content {
+			padding: 2rem;
+		}
+		.text-limit {
+			max-width: 66rem;
+		}
+
+		/* Headings */
+		h1 { font-size: 2.2rem; line-height: 1.3; font-weight: 400; color: rgba(0,0,0,0.85); }
+		h2 { font-size: 1.9rem; line-height: 1.3; font-weight: 400; color: rgba(0,0,0,0.85); }
+		.small { font-size: 1.2rem; }
+
+		.bodycopy { color: rgba(38,38,38,0.85); }
+		.bodycopy p { margin-bottom: 1.4em; }
+
+		@media (max-width: 768px) {
+			/* In normal flow at the top so it never overlaps content */
+			.site-menu {
+				position: static;
+				display: flex;
+				gap: 1.6rem;
+				padding: 2rem 2rem 0;
+				mix-blend-mode: normal;
+				color: #000;
+				text-align: left;
+			}
+			.site-menu a { display: inline; }
+		}
+	</style>
+</head>
+<body>
+	<nav class="site-menu">
+		<a href={href('/')} class={active === 'works' ? 'active' : ''}>works</a>
+		<a href={href('/about')} class={active === 'about' ? 'active' : ''}>about</a>
+	</nav>
+	<slot />
+</body>
+</html>
